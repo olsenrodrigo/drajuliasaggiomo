@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dra-julia-site",
+      "runtimeExecutable": "/opt/homebrew/opt/node@22/bin/npx",
+      "runtimeArgs": ["vite", "--port", "5050"],
+      "port": 5050,
+      "cwd": "codigo",
+      "env": {
+        "PATH": "/opt/homebrew/opt/node@22/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
+      }
+    }
+  ]
+}
