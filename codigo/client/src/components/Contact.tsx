@@ -57,17 +57,17 @@ export default function Contact() {
             className="space-y-6"
           >
             <div className="bg-white rounded-2xl p-6 shadow-sm border" style={{ borderColor: "rgba(201, 168, 124, 0.15)" }}>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-3 min-w-0">
                 <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#F8F4EF" }}>
                   <MapPin className="w-5 h-5" style={{ color: "#C9A87C" }} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="font-bold mb-1" style={{ color: "#212529" }}>{t("contact.addressLabel")}</p>
                   <a
-                    href="https://maps.google.com/?q=Av+Dr+Chucri+Zaidan+1550+Vila+Cordeiro+São+Paulo+SP+04711-130"
+                    href="https://www.google.com/maps/search/Av+Dr+Chucri+Zaidan+1550+Vila+Cordeiro+São+Paulo+SP+04711-130"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm block hover:underline"
+                    className="text-sm block hover:underline break-words"
                     style={{ color: "#3C3C3C" }}
                   >
                     {t("contact.addressLine1")}<br />

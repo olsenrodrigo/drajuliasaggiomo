@@ -65,15 +65,15 @@ export default function Locations() {
               className="mt-8 p-6 rounded-2xl border"
               style={{ borderColor: "rgba(201, 168, 124, 0.2)", backgroundColor: "rgba(248, 244, 239, 0.5)" }}
             >
-              <div className="flex items-start gap-3 mb-4">
+              <div className="flex items-start gap-3 mb-4 min-w-0">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: "#C9A87C" }} />
-                <div>
+                <div className="min-w-0">
                   <p className="font-bold" style={{ color: "#212529" }}>{t("locations.addressLabel")}</p>
                   <a
-                    href="https://maps.google.com/?q=Av+Dr+Chucri+Zaidan+1550+Vila+Cordeiro+São+Paulo+SP+04711-130"
+                    href="https://www.google.com/maps/search/Av+Dr+Chucri+Zaidan+1550+Vila+Cordeiro+São+Paulo+SP+04711-130"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block hover:underline"
+                    className="block hover:underline text-sm sm:text-base"
                     style={{ color: "#3C3C3C" }}
                   >
                     {t("locations.addressLine1")}<br />
@@ -89,19 +89,29 @@ export default function Locations() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl overflow-hidden shadow-lg border"
+            className="rounded-2xl overflow-hidden shadow-lg border flex flex-col"
             style={{ borderColor: "rgba(201, 168, 124, 0.15)" }}
           >
-            <div
-              className="w-full flex items-center justify-center"
-              style={{ minHeight: "400px", backgroundColor: "#F8F4EF" }}
+            <iframe
+              src="https://maps.google.com/maps?q=Av+Dr+Chucri+Zaidan+1550+Vila+Cordeiro+São+Paulo+SP&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              className="w-full flex-1"
+              style={{ minHeight: "400px", border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Google Maps - Consultório Dra. Júlia Saggiomo"
+            />
+            <a
+              href="https://www.google.com/maps/search/Av+Dr+Chucri+Zaidan+1550+Vila+Cordeiro+São+Paulo+SP+04711-130"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-3 px-4 text-sm font-medium transition-colors hover:opacity-80 text-center"
+              style={{ backgroundColor: "#F8F4EF", color: "#4A3746" }}
             >
-              <div className="text-center p-8">
-                <MapPin className="w-16 h-16 mx-auto mb-4 opacity-30" style={{ color: "#C9A87C" }} />
-                <p className="text-lg font-medium" style={{ color: "#4A3746" }}>{t("locations.mapTitle")}</p>
-                <p className="text-sm mt-2" style={{ color: "#3C3C3C" }}>{t("locations.mapSubtext")}</p>
-              </div>
-            </div>
+              <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: "#C9A87C" }} />
+              <span className="hidden sm:inline">{t("locations.mapTitle")} — {t("locations.addressLine1")}</span>
+              <span className="sm:hidden">Abrir no Google Maps</span>
+            </a>
           </motion.div>
         </div>
       </div>
