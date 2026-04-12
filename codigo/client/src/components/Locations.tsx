@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Clock, Users, Shield } from "lucide-react";
+import { Clock, Users, Shield } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function Locations() {
@@ -66,7 +66,7 @@ export default function Locations() {
               style={{ borderColor: "rgba(201, 168, 124, 0.2)", backgroundColor: "rgba(248, 244, 239, 0.5)" }}
             >
               <div className="flex items-start gap-3 mb-4 min-w-0">
-                <MapPin className="w-5 h-5 flex-shrink-0 mt-1" style={{ color: "#C9A87C" }} />
+                <img src="/mandala.png" alt="" className="w-5 h-5 flex-shrink-0 mt-1" />
                 <div className="min-w-0">
                   <p className="font-bold" style={{ color: "#212529" }}>{t("locations.addressLabel")}</p>
                   <a
@@ -108,7 +108,7 @@ export default function Locations() {
               className="flex items-center justify-center gap-2 py-3 px-4 text-sm font-medium transition-colors hover:opacity-80 text-center"
               style={{ backgroundColor: "#F8F4EF", color: "#4A3746" }}
             >
-              <MapPin className="w-4 h-4 flex-shrink-0" style={{ color: "#C9A87C" }} />
+              <img src="/mandala.png" alt="" className="w-4 h-4 flex-shrink-0" />
               <span className="hidden sm:inline">{t("locations.mapTitle")} — {t("locations.addressLine1")}</span>
               <span className="sm:hidden">Abrir no Google Maps</span>
             </a>
