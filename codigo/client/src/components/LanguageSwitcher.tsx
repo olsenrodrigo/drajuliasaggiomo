@@ -47,6 +47,7 @@ const languages = [
     code: "zh",
     path: "/zh",
     label: "中文",
+    active: false, // Mandarin não contratado — manter estrutura para ativação futura
     flag: (
       <svg width="24" height="16" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
         <rect width="640" height="480" fill="#DE2910" />
@@ -128,7 +129,7 @@ export default function LanguageSwitcher() {
             className="absolute right-0 top-full mt-2 bg-white rounded-xl shadow-xl border overflow-hidden z-50"
             style={{ borderColor: "rgba(91, 140, 155, 0.2)", minWidth: "160px" }}
           >
-            {languages.map((lang) => (
+            {languages.filter((l) => l.active !== false).map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => changeLanguage(lang.code, lang.path)}

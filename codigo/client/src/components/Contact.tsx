@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2, Loader2, MapPin, Phone, Mail } from "lucide-react";
+import { Send, CheckCircle2, Loader2, Phone, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function Contact() {
@@ -59,7 +59,7 @@ export default function Contact() {
             <div className="bg-white rounded-2xl p-6 shadow-sm border" style={{ borderColor: "rgba(201, 168, 124, 0.15)" }}>
               <div className="flex items-start gap-3 min-w-0">
                 <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#F8F4EF" }}>
-                  <MapPin className="w-5 h-5" style={{ color: "#C9A87C" }} />
+                  <img src="/mandala.png" alt="" className="w-5 h-5" />
                 </div>
                 <div className="min-w-0">
                   <p className="font-bold mb-1" style={{ color: "#212529" }}>{t("contact.addressLabel")}</p>
