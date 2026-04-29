@@ -106,6 +106,21 @@ export default function Navbar({ activeSection = "hero", scrollToSection }: Navb
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
               </a>
+              <a href="https://www.youtube.com/@drajuliasaggiomo" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70" aria-label="YouTube">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#494949">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/dra-j%C3%BAlia-saggiomo-abb3ba68/" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70" aria-label="LinkedIn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#494949">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              <a href="https://www.tiktok.com/@drajuliasaggiomo" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70" aria-label="TikTok">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#494949">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.25 8.25 0 0 0 4.83 1.56V6.79a4.85 4.85 0 0 1-1.06-.1z"/>
+                </svg>
+              </a>
               <LanguageSwitcher />
             </div>
           </nav>
@@ -157,6 +172,21 @@ export default function Navbar({ activeSection = "hero", scrollToSection }: Navb
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#494949" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="4" width="20" height="16" rx="2" />
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+              </a>
+              <a href="https://www.youtube.com/@drajuliasaggiomo" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70" aria-label="YouTube">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#494949">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/dra-j%C3%BAlia-saggiomo-abb3ba68/" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70" aria-label="LinkedIn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#494949">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              <a href="https://www.tiktok.com/@drajuliasaggiomo" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-70" aria-label="TikTok">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="#494949">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.25 8.25 0 0 0 4.83 1.56V6.79a4.85 4.85 0 0 1-1.06-.1z"/>
                 </svg>
               </a>
             </div>

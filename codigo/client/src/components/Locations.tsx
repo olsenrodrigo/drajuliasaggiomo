@@ -98,7 +98,7 @@ export default function Locations() {
           >
             <div style={{ position: "relative", minHeight: "480px" }}>
               <iframe
-                src="https://maps.google.com/maps?q=Av+Dr+Chucri+Zaidan+1550+cj+1817+Vila+Cordeiro+São+Paulo+SP&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.40146717129!2d-46.704803824381294!3d-23.625789378755524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce50dc5bbcedab%3A0x853e50aa504809b!2sAv.%20Dr.%20Chucri%20Zaidan%2C%201550%20-%20Vila%20Sao%20Francisco%20(Zona%20Sul)%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004711-130!5e0!3m2!1spt-BR!2sbr!4v1777469688486!5m2!1spt-BR!2sbr"
                 style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0, display: "block" }}
                 allowFullScreen
                 loading="lazy"
