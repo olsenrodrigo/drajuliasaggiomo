@@ -85,25 +85,6 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-16 border-t"
-          style={{ borderColor: "rgba(201, 168, 124, 0.2)" }}
-        >
-          {[
-            { value: t("about.indicator1Value"), label: t("about.indicator1Label") },
-            { value: t("about.indicator2Value"), label: t("about.indicator2Label") },
-            { value: t("about.indicator3Value"), label: t("about.indicator3Label") },
-          ].map((item, index) => (
-            <div key={index} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold mb-2" style={{ color: "#4A3746" }}>{item.value}</div>
-              <div className="text-base" style={{ color: "#3C3C3C" }}>{item.label}</div>
-            </div>
-          ))}
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           className="mt-20 text-center"
         >
           <blockquote className="text-3xl md:text-4xl font-bold italic max-w-3xl mx-auto mb-8" style={{ color: "#4A3746" }}>
