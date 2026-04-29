@@ -21,7 +21,7 @@ export default function Locations() {
           className="text-center mb-16"
         >
           <div className="inline-block px-4 py-2 rounded-full mb-6" style={{ backgroundColor: "rgba(201, 168, 124, 0.15)" }}>
-            <span className="text-sm font-medium" style={{ color: "#4A3746" }}>{t("locations.badge")}</span>
+            <span className="text-sm font-medium" style={{ color: "#6a363d" }}>{t("locations.badge")}</span>
           </div>
 
           <h3 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "#212529" }}>
@@ -32,7 +32,7 @@ export default function Locations() {
             {t("locations.description")}
           </p>
 
-          <p className="text-base max-w-3xl mx-auto text-left italic px-5 py-4 rounded-2xl border-l-4" style={{ color: "#4A3746", borderColor: "#C9A87C", backgroundColor: "rgba(201, 168, 124, 0.06)" }}>
+          <p className="text-base max-w-3xl mx-auto text-left italic px-5 py-4 rounded-2xl border-l-4" style={{ color: "#6a363d", borderColor: "#C9A87C", backgroundColor: "rgba(201, 168, 124, 0.06)" }}>
             {t("locations.description2")}
           </p>
         </motion.div>
@@ -111,7 +111,7 @@ export default function Locations() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 py-3 px-4 text-sm font-medium transition-colors hover:opacity-80 text-center"
-              style={{ backgroundColor: "#F8F4EF", color: "#4A3746" }}
+              style={{ backgroundColor: "#F8F4EF", color: "#6a363d" }}
             >
               <img src="/mandala.png" alt="" className="w-4 h-4 flex-shrink-0" />
               <span className="hidden sm:inline">{t("locations.mapTitle")} — {t("locations.addressLine1")}</span>

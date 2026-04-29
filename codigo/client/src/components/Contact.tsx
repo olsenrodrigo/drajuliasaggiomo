@@ -37,7 +37,7 @@ export default function Contact() {
           className="text-center mb-12"
         >
           <div className="inline-block px-4 py-2 rounded-full mb-6" style={{ backgroundColor: "rgba(201, 168, 124, 0.15)" }}>
-            <span className="text-sm font-medium" style={{ color: "#4A3746" }}>{t("contact.badge")}</span>
+            <span className="text-sm font-medium" style={{ color: "#6a363d" }}>{t("contact.badge")}</span>
           </div>
 
           <h3 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "#212529" }}>
@@ -118,12 +118,12 @@ export default function Contact() {
               {status === "success" ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
                   <CheckCircle2 className="w-16 h-16 text-green-500 mb-4" />
-                  <h4 className="text-xl font-bold mb-2" style={{ color: "#4A3746" }}>{t("contact.formSuccess")}</h4>
+                  <h4 className="text-xl font-bold mb-2" style={{ color: "#6a363d" }}>{t("contact.formSuccess")}</h4>
                   <p className="mb-6" style={{ color: "#3C3C3C" }}>{t("contact.formSuccessMessage")}</p>
                   <button
                     onClick={() => setStatus("idle")}
                     className="px-6 py-2 rounded-lg border font-medium transition-colors hover:bg-gray-50 cursor-pointer"
-                    style={{ borderColor: "rgba(201, 168, 124, 0.3)", color: "#4A3746" }}
+                    style={{ borderColor: "rgba(201, 168, 124, 0.3)", color: "#6a363d" }}
                   >
                     {t("contact.formSendAnother")}
                   </button>
@@ -194,7 +194,7 @@ export default function Contact() {
                     type="submit"
                     disabled={status === "loading"}
                     className="w-full px-8 py-4 text-white rounded-xl font-semibold flex items-center justify-center gap-2 hover:shadow-xl transition-all cursor-pointer disabled:opacity-70"
-                    style={{ background: "linear-gradient(135deg, #C9A87C 0%, #4A3746 100%)" }}
+                    style={{ background: "linear-gradient(135deg, #C9A87C 0%, #6a363d 100%)" }}
                   >
                     {status === "loading" ? (
                       <><Loader2 className="w-5 h-5 animate-spin" /> {t("contact.formSending")}</>

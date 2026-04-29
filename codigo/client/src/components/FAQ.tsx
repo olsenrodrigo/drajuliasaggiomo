@@ -33,7 +33,7 @@ export default function FAQ() {
           className="text-center mb-16"
         >
           <div className="inline-block px-4 py-2 rounded-full mb-6" style={{ backgroundColor: "rgba(201, 168, 124, 0.15)" }}>
-            <span className="text-sm font-medium" style={{ color: "#4A3746" }}>{t("faq.badge")}</span>
+            <span className="text-sm font-medium" style={{ color: "#6a363d" }}>{t("faq.badge")}</span>
           </div>
 
           <h3 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: "#212529" }}>
@@ -81,7 +81,7 @@ export default function FAQ() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mt-20 rounded-3xl p-12 text-center text-white"
-          style={{ background: "linear-gradient(135deg, #C9A87C 0%, #4A3746 100%)" }}
+          style={{ background: "linear-gradient(135deg, #C9A87C 0%, #6a363d 100%)" }}
         >
           <h4 className="text-2xl md:text-3xl font-bold mb-4 text-white">
             {t("faq.ctaTitle")}
@@ -96,7 +96,7 @@ export default function FAQ() {
           </p>
           <button
             className="px-8 py-4 bg-white rounded-full font-semibold hover:bg-opacity-90 transition-colors cursor-pointer"
-            style={{ color: "#4A3746" }}
+            style={{ color: "#6a363d" }}
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           >
             {t("faq.ctaButton")}

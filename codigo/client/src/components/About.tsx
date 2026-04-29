@@ -87,7 +87,7 @@ export default function About() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <blockquote className="text-3xl md:text-4xl font-bold italic max-w-3xl mx-auto mb-8" style={{ color: "#4A3746" }}>
+          <blockquote className="text-3xl md:text-4xl font-bold italic max-w-3xl mx-auto mb-8" style={{ color: "#6a363d" }}>
             "{t("about.quote")}"
           </blockquote>
           <motion.button
