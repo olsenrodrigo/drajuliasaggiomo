@@ -74,7 +74,7 @@ export default function Locations() {
                 <div className="min-w-0">
                   <p className="font-bold" style={{ color: "#212529" }}>{t("locations.addressLabel")}</p>
                   <a
-                    href="https://www.google.com/maps/search/Av+Dr+Chucri+Zaidan+1550+cj+905+Vila+Cordeiro+São+Paulo+SP"
+                    href="https://www.google.com/maps/search/Av+Dr+Chucri+Zaidan+1550+cj+1817+Vila+Cordeiro+São+Paulo+SP"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block hover:underline text-sm sm:text-base"
@@ -98,7 +98,7 @@ export default function Locations() {
           >
             <div style={{ position: "relative", minHeight: "480px" }}>
               <iframe
-                src="https://maps.google.com/maps?q=Av+Dr+Chucri+Zaidan+1550+cj+905+Vila+Cordeiro+São+Paulo+SP&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Av+Dr+Chucri+Zaidan+1550+cj+1817+Vila+Cordeiro+São+Paulo+SP&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0, display: "block" }}
                 allowFullScreen
                 loading="lazy"
@@ -107,7 +107,7 @@ export default function Locations() {
               />
             </div>
             <a
-              href="https://www.google.com/maps/search/Av+Dr+Chucri+Zaidan+1550+cj+905+Vila+Cordeiro+São+Paulo+SP"
+              href="https://www.google.com/maps/search/Av+Dr+Chucri+Zaidan+1550+cj+1817+Vila+Cordeiro+São+Paulo+SP"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 py-3 px-4 text-sm font-medium transition-colors hover:opacity-80 text-center"
