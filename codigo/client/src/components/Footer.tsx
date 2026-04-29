@@ -28,7 +28,7 @@ export default function Footer() {
               {t("footer.crm")}
             </p>
             <a
-              href="https://www.google.com/maps?q=Av+Dr+Chucri+Zaidan+1550+Vila+Cordeiro+São+Paulo+SP"
+              href="https://www.google.com/maps?q=Av.+Dr.+Chucri+Zaidan,+1550+-+1817+-+Vila+S%C3%A3o+Francisco,+S%C3%A3o+Paulo+-+SP,+04711-130&ftid=0x94ce50cee7115555:0xa48fe3a1518e83d4"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-sm leading-relaxed mt-3 hover:text-white transition-colors"
