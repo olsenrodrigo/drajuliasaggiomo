@@ -64,7 +64,7 @@ export default function Contact() {
                 <div className="min-w-0">
                   <p className="font-bold mb-1" style={{ color: "#212529" }}>{t("contact.addressLabel")}</p>
                   <a
-                    href="https://www.google.com/maps?q=Av+Dr+Chucri+Zaidan+1550+Vila+Cordeiro+São+Paulo+SP"
+                    href="https://www.google.com/maps?q=Av.+Dr.+Chucri+Zaidan,+1550+-+1817+-+Vila+S%C3%A3o+Francisco,+S%C3%A3o+Paulo+-+SP,+04711-130&ftid=0x94ce50cee7115555:0xa48fe3a1518e83d4"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm block hover:underline break-words"
