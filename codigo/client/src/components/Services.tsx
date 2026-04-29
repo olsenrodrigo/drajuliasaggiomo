@@ -12,9 +12,6 @@ export default function Services() {
     t("services.service4"),
     t("services.service5"),
     t("services.service6"),
-    t("services.service7"),
-    t("services.service8"),
-    t("services.service9"),
   ];
 
   return (

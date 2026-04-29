@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
-import { Award, BookOpen, GraduationCap, Briefcase, IdCard, Building2 } from "lucide-react";
+import { Award, GraduationCap, Activity, Globe, Users, Zap, Building2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function About() {
   const { t } = useTranslation();
 
   const credentials = [
-    { icon: Briefcase, text: t("about.cred1") },
-    { icon: Award, text: t("about.cred2") },
-    { icon: BookOpen, text: t("about.cred3") },
-    { icon: GraduationCap, text: t("about.cred4") },
-    { icon: Building2, text: t("about.cred5") },
-    { icon: IdCard, text: t("about.cred6") },
+    { icon: GraduationCap, text: t("about.cred1") },
+    { icon: Activity,      text: t("about.cred2") },
+    { icon: Globe,         text: t("about.cred3") },
+    { icon: Award,         text: t("about.cred4") },
+    { icon: Users,         text: t("about.cred5") },
+    { icon: Zap,           text: t("about.cred6") },
+    { icon: Building2,     text: t("about.cred7") },
   ];
 
   return (
