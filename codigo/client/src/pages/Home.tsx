@@ -7,7 +7,6 @@ import Treatments from "@/components/Treatments";
 import Differentials from "@/components/Differentials";
 import Locations from "@/components/Locations";
 import FAQ from "@/components/FAQ";
-import HowItWorks from "@/components/HowItWorks";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -23,7 +22,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const sections = ["hero", "about", "services", "treatments", "differentials", "locations", "faq", "how-it-works", "contact"];
+    const sections = ["hero", "about", "services", "treatments", "differentials", "locations", "faq", "contact"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -54,7 +53,6 @@ export default function Home() {
         <Differentials />
         <Locations />
         <FAQ />
-        <HowItWorks />
         <Contact />
       </main>
       <Footer />

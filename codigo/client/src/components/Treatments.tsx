@@ -1,17 +1,21 @@
 import { motion } from "framer-motion";
-import { Stethoscope, Activity, AlertCircle, Scissors } from "lucide-react";
+import { Zap, Shield, Heart, Sparkles, Activity, Scissors, Stethoscope, Leaf, AlertCircle } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function Treatments() {
   const { t } = useTranslation();
 
   const treatments = [
-    { icon: Stethoscope, text: t("treatments.treatment1") },
-    { icon: Activity, text: t("treatments.treatment2") },
-    { icon: Scissors, text: t("treatments.treatment3") },
-    { icon: Stethoscope, text: t("treatments.treatment4") },
-    { icon: Activity, text: t("treatments.treatment5") },
-    { icon: Scissors, text: t("treatments.treatment6") },
+    { icon: Zap,          text: t("treatments.treatment1") },
+    { icon: Zap,          text: t("treatments.treatment2") },
+    { icon: Shield,       text: t("treatments.treatment3") },
+    { icon: Activity,     text: t("treatments.treatment4") },
+    { icon: Heart,        text: t("treatments.treatment5") },
+    { icon: Sparkles,     text: t("treatments.treatment6") },
+    { icon: Activity,     text: t("treatments.treatment7") },
+    { icon: Scissors,     text: t("treatments.treatment8") },
+    { icon: Stethoscope,  text: t("treatments.treatment9") },
+    { icon: Leaf,         text: t("treatments.treatment10") },
   ];
 
   return (
@@ -27,9 +31,12 @@ export default function Treatments() {
             <span className="text-sm font-medium" style={{ color: "#C9A87C" }}>{t("treatments.badge")}</span>
           </div>
 
-          <h3 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: "#212529" }}>
+          <h3 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: "#212529" }}>
             {t("treatments.title")}
           </h3>
+          <p className="text-xl md:text-2xl font-medium mb-6" style={{ color: "#C9A87C" }}>
+            {t("treatments.titleSub")}
+          </p>
 
           <p className="text-lg max-w-4xl mx-auto" style={{ color: "#3C3C3C" }}>
             {t("treatments.description")}

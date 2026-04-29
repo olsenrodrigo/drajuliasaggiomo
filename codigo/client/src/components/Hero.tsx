@@ -32,15 +32,15 @@ export default function Hero({ scrollToSection }: HeroProps) {
         />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24 pt-32 sm:pt-36">
-        <div className="max-w-2xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 pt-28 sm:pt-32">
+        <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <div
-              className="inline-block px-4 py-2 backdrop-blur-sm border rounded-full mb-6"
+              className="inline-block px-4 py-2 backdrop-blur-sm border rounded-full mb-5"
               style={{ backgroundColor: "rgba(201, 168, 124, 0.2)", borderColor: "rgba(201, 168, 124, 0.3)" }}
             >
               <span className="text-sm font-medium" style={{ color: "#F8F4EF" }}>
@@ -48,19 +48,15 @@ export default function Hero({ scrollToSection }: HeroProps) {
               </span>
             </div>
 
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5 leading-snug">
               {t("hero.titleStart")}
               <span style={{ color: "#C9A87C" }}>
                 {t("hero.titleHighlight")}
               </span>
             </h2>
 
-            <p className="text-lg mb-4 leading-relaxed" style={{ color: "#F8F4EF" }}>
+            <p className="text-base sm:text-lg mb-6 leading-relaxed" style={{ color: "#F8F4EF" }}>
               {t("hero.subtitle")}
-            </p>
-
-            <p className="text-base mb-8 leading-relaxed" style={{ color: "rgba(248, 244, 239, 0.85)" }}>
-              {t("hero.description")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -68,22 +64,22 @@ export default function Hero({ scrollToSection }: HeroProps) {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => goTo("contact")}
-                className="group px-8 py-4 text-white rounded-full font-medium flex items-center justify-center gap-2 hover:shadow-xl transition-all cursor-pointer"
+                className="group px-7 py-3.5 text-white rounded-full font-medium flex items-center justify-center gap-2 hover:shadow-xl transition-all cursor-pointer"
                 style={{ background: "#C9A87C" }}
               >
-                <Calendar size={20} />
+                <Calendar size={18} />
                 {t("hero.ctaSchedule")}
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </motion.button>
 
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => goTo("about")}
-                className="px-8 py-4 backdrop-blur-sm text-white rounded-full font-medium border-2 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                className="px-7 py-3.5 backdrop-blur-sm text-white rounded-full font-medium border-2 transition-all flex items-center justify-center gap-2 cursor-pointer"
                 style={{ backgroundColor: "rgba(255, 255, 255, 0.1)", borderColor: "rgba(255, 255, 255, 0.2)" }}
               >
-                <User size={20} />
+                <User size={18} />
                 {t("hero.ctaSpecialist")}
               </motion.button>
             </div>
@@ -93,7 +89,7 @@ export default function Hero({ scrollToSection }: HeroProps) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="grid grid-cols-3 gap-3 sm:gap-6 mt-8 sm:mt-16 pt-6 sm:pt-10 border-t"
+            className="grid grid-cols-3 gap-2 sm:gap-6 mt-8 sm:mt-12 pt-6 sm:pt-8 border-t"
             style={{ borderColor: "rgba(255, 255, 255, 0.1)" }}
           >
             {[
@@ -101,9 +97,9 @@ export default function Hero({ scrollToSection }: HeroProps) {
               { value: t("hero.stat2Value"), label: t("hero.stat2Label") },
               { value: t("hero.stat3Value"), label: t("hero.stat3Label") },
             ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-sm" style={{ color: "#F8F4EF" }}>{stat.label}</div>
+              <div key={index} className="text-center px-1">
+                <div className="text-lg sm:text-2xl md:text-3xl font-bold text-white mb-1 leading-tight">{stat.value}</div>
+                <div className="text-xs sm:text-sm leading-snug" style={{ color: "#F8F4EF" }}>{stat.label}</div>
               </div>
             ))}
           </motion.div>

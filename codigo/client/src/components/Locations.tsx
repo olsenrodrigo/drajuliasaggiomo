@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import { Clock, Users, Shield } from "lucide-react";
+import { Palette, Microscope, Target } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function Locations() {
   const { t } = useTranslation();
 
   const features = [
-    { icon: Shield, text: t("locations.feature1") },
-    { icon: Clock, text: t("locations.feature2") },
-    { icon: Users, text: t("locations.feature3") },
+    { icon: Palette,     text: t("locations.feature1") },
+    { icon: Microscope,  text: t("locations.feature2") },
+    { icon: Target,      text: t("locations.feature3") },
   ];
 
   return (
@@ -28,8 +28,12 @@ export default function Locations() {
             {t("locations.title")}
           </h3>
 
-          <p className="text-xl max-w-3xl mx-auto" style={{ color: "#3C3C3C" }}>
+          <p className="text-xl max-w-3xl mx-auto mb-6 text-left" style={{ color: "#3C3C3C" }}>
             {t("locations.description")}
+          </p>
+
+          <p className="text-base max-w-3xl mx-auto text-left italic px-5 py-4 rounded-2xl border-l-4" style={{ color: "#4A3746", borderColor: "#C9A87C", backgroundColor: "rgba(201, 168, 124, 0.06)" }}>
+            {t("locations.description2")}
           </p>
         </motion.div>
 
@@ -70,7 +74,7 @@ export default function Locations() {
                 <div className="min-w-0">
                   <p className="font-bold" style={{ color: "#212529" }}>{t("locations.addressLabel")}</p>
                   <a
-                    href="https://www.google.com/maps/search/Av+Dr+Chucri+Zaidan+1550+Vila+Cordeiro+São+Paulo+SP+04711-130"
+                    href="https://www.google.com/maps/search/Av+Dr+Chucri+Zaidan+1550+cj+905+Vila+Cordeiro+São+Paulo+SP"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block hover:underline text-sm sm:text-base"
@@ -89,20 +93,21 @@ export default function Locations() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl overflow-hidden shadow-lg border flex flex-col"
+            className="rounded-2xl overflow-hidden shadow-lg border"
             style={{ borderColor: "rgba(201, 168, 124, 0.15)" }}
           >
-            <iframe
-              src="https://maps.google.com/maps?q=Av+Dr+Chucri+Zaidan+1550+Vila+Cordeiro+São+Paulo+SP&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              className="w-full flex-1"
-              style={{ minHeight: "400px", border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Google Maps - Consultório Dra. Júlia Saggiomo"
-            />
+            <div style={{ position: "relative", minHeight: "480px" }}>
+              <iframe
+                src="https://maps.google.com/maps?q=Av+Dr+Chucri+Zaidan+1550+cj+905+Vila+Cordeiro+São+Paulo+SP&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0, display: "block" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Maps - Consultório Dra. Júlia Saggiomo"
+              />
+            </div>
             <a
-              href="https://www.google.com/maps/search/Av+Dr+Chucri+Zaidan+1550+Vila+Cordeiro+São+Paulo+SP+04711-130"
+              href="https://www.google.com/maps/search/Av+Dr+Chucri+Zaidan+1550+cj+905+Vila+Cordeiro+São+Paulo+SP"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 py-3 px-4 text-sm font-medium transition-colors hover:opacity-80 text-center"

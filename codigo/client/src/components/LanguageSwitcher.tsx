@@ -35,6 +35,7 @@ const languages = [
     code: "it",
     path: "/it",
     label: "Italiano",
+    active: false, // não contratado — manter estrutura para ativação futura
     flag: (
       <svg width="24" height="16" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
         <rect width="213.3" height="480" fill="#009246" />
