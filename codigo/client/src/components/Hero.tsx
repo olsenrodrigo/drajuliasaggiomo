@@ -23,7 +23,7 @@ export default function Hero({ scrollToSection }: HeroProps) {
         <div
           className="w-full h-full"
           style={{
-            background: "linear-gradient(135deg, #4A3746 0%, #5E4756 40%, #C9A87C 100%)"
+            background: "linear-gradient(135deg, #6a363d 0%, #7e464d 40%, #C9A87C 100%)"
           }}
         />
         <div

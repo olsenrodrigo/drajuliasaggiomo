@@ -20,8 +20,8 @@
   --color-primary: #C9A87C;
   --color-primary-foreground: #FFFFFF;
 
-  /* Secondary: Ameixa escuro */
-  --color-secondary: #4A3746;
+  /* Secondary: Borgonha escuro */
+  --color-secondary: #6a363d;
   --color-secondary-foreground: #FFFFFF;
 
   /* Muted: Creme quente para seções alternadas */
@@ -29,7 +29,7 @@
   --color-muted-foreground: #3C3C3C;
 
   /* Accent: Footer e overlays */
-  --color-accent: #3D2D38;
+  --color-accent: #4d252a;
   --color-accent-foreground: #FFFFFF;
 
   /* Neutrals & Text */

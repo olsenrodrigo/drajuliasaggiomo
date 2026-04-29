@@ -34,7 +34,7 @@ export default function Differentials() {
             className="text-center mb-16"
           >
             <div className="inline-block px-4 py-2 rounded-full mb-6" style={{ backgroundColor: "rgba(201, 168, 124, 0.15)" }}>
-              <span className="text-sm font-medium" style={{ color: "#4A3746" }}>{t("differentials.badge")}</span>
+              <span className="text-sm font-medium" style={{ color: "#6a363d" }}>{t("differentials.badge")}</span>
             </div>
 
             <h3 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: "#212529" }}>
@@ -58,7 +58,7 @@ export default function Differentials() {
                 style={{ borderColor: "rgba(201, 168, 124, 0.15)" }}
               >
                 <div className="mx-auto w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
-                  style={{ background: "linear-gradient(135deg, #C9A87C 0%, #4A3746 100%)" }}
+                  style={{ background: "linear-gradient(135deg, #C9A87C 0%, #6a363d 100%)" }}
                 >
                   <item.icon className="w-8 h-8 text-white" />
                 </div>
