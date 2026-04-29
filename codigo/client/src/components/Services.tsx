@@ -11,7 +11,6 @@ export default function Services() {
     t("services.service3"),
     t("services.service4"),
     t("services.service5"),
-    t("services.service6"),
   ];
 
   return (
@@ -36,7 +35,7 @@ export default function Services() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-16">
+        <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto mb-16">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -44,11 +43,11 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm border"
+              className="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm border w-full sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]"
               style={{ borderColor: "rgba(201, 168, 124, 0.15)" }}
             >
-              <CheckCircle2 className="w-5 h-5 flex-shrink-0" style={{ color: "#C9A87C" }} />
-              <span className="font-medium" style={{ color: "#212529" }}>{service}</span>
+              <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: "#C9A87C" }} />
+              <span className="font-medium leading-snug" style={{ color: "#212529" }}>{service}</span>
             </motion.div>
           ))}
         </div>
