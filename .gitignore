@@ -5,5 +5,5 @@ dist/
 .env
 .env.*
 comprovantes/
-imagens/
+/imagens/
 inputs/
