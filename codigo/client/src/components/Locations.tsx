@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Palette, Microscope, Target } from "lucide-react";
+import { Palette, Microscope, Target, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 
 export default function Locations() {
@@ -35,6 +36,53 @@ export default function Locations() {
           <p className="text-base max-w-3xl mx-auto text-left italic px-5 py-4 rounded-2xl border-l-4" style={{ color: "#6a363d", borderColor: "#C9A87C", backgroundColor: "rgba(201, 168, 124, 0.06)" }}>
             {t("locations.description2")}
           </p>
+        </motion.div>
+
+        {/* Photo preview strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-5xl mx-auto mb-8"
+        >
+          {[
+            { src: "/imagens/o_instituto_saggiomo/recepcao.jpg", alt: "Recepção" },
+            { src: "/imagens/o_instituto_saggiomo/salaatendimento1.jpg", alt: "Sala de consulta" },
+            { src: "/imagens/o_instituto_saggiomo/decoracaocorredor.jpg", alt: "Ambientação" },
+          ].map((img, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.97 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="rounded-2xl overflow-hidden shadow-sm aspect-[4/3]"
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Instituto link */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center mb-14"
+        >
+          <Link
+            href="/instituto"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            style={{ background: "linear-gradient(135deg, #C9A87C 0%, #6a363d 100%)" }}
+          >
+            Conhecer o Instituto Saggiomo
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">

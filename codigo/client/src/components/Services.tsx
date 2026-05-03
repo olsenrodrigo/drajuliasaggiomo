@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Images, ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 
 export default function Services() {
@@ -51,6 +52,52 @@ export default function Services() {
             </motion.div>
           ))}
         </div>
+
+        {/* Results showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-5xl mx-auto mb-12"
+        >
+          <Link href="/resultados" className="block group">
+            <div
+              className="rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 transition-shadow hover:shadow-lg"
+              style={{
+                background: "linear-gradient(135deg, rgba(106,54,61,0.04) 0%, rgba(201,168,124,0.12) 100%)",
+                border: "1.5px solid rgba(201, 168, 124, 0.35)",
+              }}
+            >
+              <div className="text-center md:text-left">
+                <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
+                  <Images className="w-5 h-5" style={{ color: "#C9A87C" }} />
+                  <span
+                    className="text-xs font-semibold tracking-widest uppercase"
+                    style={{ color: "#C9A87C" }}
+                  >
+                    Galeria de Resultados
+                  </span>
+                </div>
+                <h4
+                  className="text-2xl md:text-3xl font-bold mb-2"
+                  style={{ color: "#212529" }}
+                >
+                  Veja as transformações reais
+                </h4>
+                <p className="text-base max-w-md" style={{ color: "#3C3C3C" }}>
+                  Resultados de pacientes reais — blefaroplastia, lipoescultura, abdominoplastia, lifting facial e muito mais.
+                </p>
+              </div>
+              <div
+                className="flex-shrink-0 flex items-center gap-3 px-7 py-4 rounded-full font-semibold text-base text-white transition-all group-hover:shadow-md"
+                style={{ background: "linear-gradient(135deg, #C9A87C 0%, #6a363d 100%)" }}
+              >
+                Ver Galeria
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </div>
+            </div>
+          </Link>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}

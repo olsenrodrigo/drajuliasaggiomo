@@ -90,6 +90,7 @@ export default function Footer() {
               <li><a href="#hero" className="hover:text-white transition-colors">{t("navbar.hero")}</a></li>
               <li><a href="#about" className="hover:text-white transition-colors">{t("navbar.about")}</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">{t("navbar.services")}</a></li>
+              <li><a href="/resultados" className="hover:text-white transition-colors">{t("navbar.resultados")}</a></li>
               <li><a href="#treatments" className="hover:text-white transition-colors">{t("navbar.treatments")}</a></li>
               <li><a href="#differentials" className="hover:text-white transition-colors">{t("navbar.differentials")}</a></li>
               <li><a href="#locations" className="hover:text-white transition-colors">{t("navbar.locations")}</a></li>

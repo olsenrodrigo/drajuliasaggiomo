@@ -7,6 +7,8 @@ import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import Resultados from "@/pages/Resultados";
+import Instituto from "@/pages/Instituto";
 
 const SUPPORTED_LANGS = ["pt", "en", "it", "zh"];
 
@@ -34,6 +36,8 @@ function LanguageRouter() {
       <Route path="/it" component={Home} />
       <Route path="/zh" component={Home} />
       <Route path="/pt">{() => <Redirect to="/" />}</Route>
+      <Route path="/resultados" component={Resultados} />
+      <Route path="/instituto" component={Instituto} />
       <Route component={NotFound} />
     </Switch>
   );
