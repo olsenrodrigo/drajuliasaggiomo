@@ -74,7 +74,7 @@ export default function Instituto() {
       <section className="relative overflow-hidden" style={{ height: "72vh", minHeight: 480 }}>
         <video
           ref={videoRef}
-          src="/imagens/o_instituto_saggiomo/o_instituto_saggiomo1.mov"
+          src="/imagens/o_instituto_saggiomo/o_instituto_saggiomo1.mp4"
           poster="/imagens/o_instituto_saggiomo/recepcao.jpg"
           preload="none"
           playsInline
