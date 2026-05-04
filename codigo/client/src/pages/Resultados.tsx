@@ -99,7 +99,7 @@ const PROCEDURES: Procedure[] = [
   {
     id: "lipedema",
     label: "Lipedema",
-    description: "Tratamento especializado para lipedema com abordagem cirúrgica e multidisciplinar",
+    description: "Tratamento especializado para lipedema com abordagem não cirúrgica e multidisciplinar — promovendo alívio da dor crônica e melhora progressiva da mobilidade e qualidade de vida",
     images: [
       { src: `/imagens/lipedema/lipedema1.jpg`, alt: "Resultado lipedema 1" },
     ],
