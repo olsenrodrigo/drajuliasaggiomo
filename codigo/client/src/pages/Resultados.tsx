@@ -10,7 +10,7 @@ const PROCEDURES: Procedure[] = [
   {
     id: "blefaroplastia",
     label: "Blefaroplastia",
-    description: "Cirurgia das pálpebras para rejuvenescimento natural do olhar",
+    description: "Remove excesso de pele, bolsas de gordura e músculo ao redor dos olhos — olhar mais jovem, descansado e natural. Pode ser complementada com Laser, Skinboosters ou transferência de gordura para resultados ainda mais impactantes. Pós-operatório indolor e recuperação rápida.",
     images: Array.from({ length: 12 }, (_, i) => ({
       src: `/imagens/blefaroplastia/blefaroplastia${i + 1}.jpg`,
       alt: `Resultado blefaroplastia ${i + 1}`,
@@ -19,7 +19,7 @@ const PROCEDURES: Procedure[] = [
   {
     id: "lipoaspiracao",
     label: "Lipoaspiração & Lipoescultura",
-    description: "Modelagem corporal com remoção de gordura localizada e definição de contornos",
+    description: "Remove gordura localizada e remodela outras áreas com a gordura retirada — disponível do Soft Definition ao High Definition (HD). Pode ser associada à Abdominoplastia para refinamento ainda maior do contorno corporal.",
     images: [
       ...Array.from({ length: 4 }, (_, i) => ({
         src: `/imagens/lipoaspiracao_lipoescultura/lipoaspiracao_lipoescultura${i + 1}.jpg`,
@@ -31,7 +31,7 @@ const PROCEDURES: Procedure[] = [
   {
     id: "abdominoplastia",
     label: "Abdominoplastia",
-    description: "Remodelamento da região abdominal com resultados expressivos e naturais",
+    description: "Remove excesso de pele e gordura do abdômen e corrige flacidez muscular e diástase — indicada após grandes perdas de peso ou gestação. Quando associada à Lipoaspiração ou Lipoescultura, os resultados de contorno e definição são ainda mais expressivos.",
     images: [
       { src: `/imagens/abdominoplastia/abdominoplastia1.jpg`, alt: "Resultado abdominoplastia 1" },
       { src: `/imagens/abdominoplastia/abdominoplastia2.jpg`, alt: "Resultado abdominoplastia 2" },
@@ -40,7 +40,7 @@ const PROCEDURES: Procedure[] = [
   {
     id: "mamoplastia",
     label: "Mamoplastia & Mastopexia",
-    description: "Harmonização e modelagem das mamas com naturalidade e proporção",
+    description: "A mamoplastia aumenta ou reduz o volume das mamas melhorando proporção e autoestima. A mastopexia reposiciona e devolve firmeza aos seios, podendo ser associada a próteses. Cicatrizes posicionadas nas dobras naturais da pele com técnicas cada vez mais discretas.",
     images: Array.from({ length: 3 }, (_, i) => ({
       src: `/imagens/mamoplastia_mastopexia/mamoplastia_mastopexia${i + 1}.jpg`,
       alt: `Resultado mamoplastia ${i + 1}`,
@@ -49,7 +49,7 @@ const PROCEDURES: Procedure[] = [
   {
     id: "lifting_facial",
     label: "Lifting Facial",
-    description: "Rejuvenescimento facial avançado com técnica Deep Plane",
+    description: "Técnica avançada que atua nas camadas mais profundas da face, reposicionando músculos e tecidos para resultado natural e duradouro. Trata a causa do envelhecimento facial — não apenas seus sinais. Procedimentos superficiais não alcançam os mesmos efeitos estruturais.",
     images: [
       { src: `/imagens/lifting_facial/lifting_facial1.jpg`, alt: "Resultado lifting facial 1" },
       { src: `/imagens/lifting_facial/lifting_facial2.jpg`, alt: "Resultado lifting facial 2" },
@@ -58,7 +58,7 @@ const PROCEDURES: Procedure[] = [
   {
     id: "laser",
     label: "Laser & Tecnologias",
-    description: "Tratamentos avançados com Laser Fotona e protocolos especializados",
+    description: "Tratamentos com Laser Fotona — o mais seguro e versátil do mundo. Protocolos incluem Fotona 6D (rejuvenescimento facial profundo), Smooth Eyes, IntimaLase, IncontiLase, Tight Sculpting e tratamento de flacidez corporal. Resultados visíveis com mínima recuperação.",
     images: [
       ...Array.from({ length: 8 }, (_, i) => ({
         src: `/imagens/laser/laser${i + 1}.jpg`,
@@ -71,7 +71,7 @@ const PROCEDURES: Procedure[] = [
   {
     id: "lipo_papada",
     label: "Lipo de Papada",
-    description: "Definição do contorno facial com eliminação da gordura submentoniana",
+    description: "Definição do contorno facial com eliminação da gordura submentoniana.",
     images: [
       { src: `/imagens/lipo_de_papada/lipo_de_papada1.jpg`, alt: "Resultado lipo papada 1" },
       { src: `/imagens/lipo_de_papada/lipo_de_papada2.jpg`, alt: "Resultado lipo papada 2" },
@@ -81,7 +81,7 @@ const PROCEDURES: Procedure[] = [
   {
     id: "fotobiomodulacao",
     label: "Fotobiomodulação",
-    description: "Referência nacional em fotobiomodulação para regeneração celular e recuperação pós-cirúrgica",
+    description: "Ciência aplicada à regeneração celular — atua no metabolismo mitocondrial modulando inflamação e dor. Indicada para dor crônica e aguda, cicatrização de feridas, fibrose pós-lipoaspiração, nódulos de bioestimuladores, lipedema e recuperação pós-operatória.",
     images: [
       { src: `/imagens/fotobiomodulacao/fotobiomodulacao1.jpg`, alt: "Resultado fotobiomodulação 1" },
       { src: `/imagens/fotobiomodulacao/fotobiomodulacao2.jpg`, alt: "Resultado fotobiomodulação 2" },
@@ -90,7 +90,7 @@ const PROCEDURES: Procedure[] = [
   {
     id: "cirurgias_combinadas",
     label: "Cirurgias Combinadas",
-    description: "Múltiplos procedimentos em um único ato cirúrgico com planejamento integrado",
+    description: "Múltiplos procedimentos em um único ato cirúrgico com planejamento integrado.",
     images: Array.from({ length: 5 }, (_, i) => ({
       src: `/imagens/cirurgias_combinadas/cirurgias_combinadas${i + 1}.jpg`,
       alt: `Resultado cirurgias combinadas ${i + 1}`,
@@ -99,7 +99,7 @@ const PROCEDURES: Procedure[] = [
   {
     id: "lipedema",
     label: "Lipedema",
-    description: "Tratamento especializado para lipedema com abordagem não cirúrgica e multidisciplinar — promovendo alívio da dor crônica e melhora progressiva da mobilidade e qualidade de vida",
+    description: "Protocolo não cirúrgico e estratégico que atua na inflamação como raiz do problema. Combinação de reeducação alimentar anti-inflamatória, atividade física orientada e fotobiomodulação para redução de dor, inchaço, retenção de líquidos e melhora da qualidade de vida.",
     images: [
       { src: `/imagens/lipedema/lipedema1.jpg`, alt: "Resultado lipedema 1" },
     ],

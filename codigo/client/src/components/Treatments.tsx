@@ -6,16 +6,16 @@ export default function Treatments() {
   const { t } = useTranslation();
 
   const treatments = [
-    { icon: Zap,          text: t("treatments.treatment1") },
-    { icon: Zap,          text: t("treatments.treatment2") },
-    { icon: Shield,       text: t("treatments.treatment3") },
-    { icon: Activity,     text: t("treatments.treatment4") },
-    { icon: Heart,        text: t("treatments.treatment5") },
-    { icon: Sparkles,     text: t("treatments.treatment6") },
-    { icon: Activity,     text: t("treatments.treatment7") },
-    { icon: Scissors,     text: t("treatments.treatment8") },
-    { icon: Stethoscope,  text: t("treatments.treatment9") },
-    { icon: Leaf,         text: t("treatments.treatment10") },
+    { icon: Zap,          text: t("treatments.treatment1"),  desc: t("treatments.treatment1Desc") },
+    { icon: Zap,          text: t("treatments.treatment2"),  desc: t("treatments.treatment2Desc") },
+    { icon: Shield,       text: t("treatments.treatment3"),  desc: t("treatments.treatment3Desc") },
+    { icon: Activity,     text: t("treatments.treatment4"),  desc: t("treatments.treatment4Desc") },
+    { icon: Heart,        text: t("treatments.treatment5"),  desc: t("treatments.treatment5Desc") },
+    { icon: Sparkles,     text: t("treatments.treatment6"),  desc: t("treatments.treatment6Desc") },
+    { icon: Activity,     text: t("treatments.treatment7"),  desc: t("treatments.treatment7Desc") },
+    { icon: Scissors,     text: t("treatments.treatment8"),  desc: t("treatments.treatment8Desc") },
+    { icon: Stethoscope,  text: t("treatments.treatment9"),  desc: t("treatments.treatment9Desc") },
+    { icon: Leaf,         text: t("treatments.treatment10"), desc: t("treatments.treatment10Desc") },
   ];
 
   return (
@@ -55,10 +55,13 @@ export default function Treatments() {
               className="flex items-start gap-4 bg-white rounded-xl p-5 shadow-lg border hover:shadow-xl transition-all"
               style={{ borderColor: "rgba(201, 168, 124, 0.15)" }}
             >
-              <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#F8F4EF" }}>
+              <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center mt-0.5" style={{ backgroundColor: "#F8F4EF" }}>
                 <item.icon className="w-5 h-5" style={{ color: "#C9A87C" }} />
               </div>
-              <span className="font-medium pt-2" style={{ color: "#212529" }}>{item.text}</span>
+              <div className="flex flex-col gap-1">
+                <span className="font-semibold text-sm leading-snug" style={{ color: "#212529" }}>{item.text}</span>
+                <span className="text-xs leading-relaxed" style={{ color: "#6B7280" }}>{item.desc}</span>
+              </div>
             </motion.div>
           ))}
         </div>
