@@ -70,7 +70,7 @@ export default function About() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl max-w-xs sm:max-w-sm">
               <img
-                src="/drajulia2.jpg"
+                src="/dra_juliawhite.jpeg"
                 alt="Dra. Júlia Saggiomo"
                 className="w-full h-[550px] object-cover"
                 style={{ objectPosition: "center 20%" }}
