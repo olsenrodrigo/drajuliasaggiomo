@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, ArrowRight, User } from "lucide-react";
+import { Calendar, ArrowRight, User, Award, Star, Sparkles } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 interface HeroProps {
@@ -18,7 +18,7 @@ export default function Hero({ scrollToSection }: HeroProps) {
   };
 
   return (
-    <div id="hero" className="relative min-h-screen flex items-center">
+    <div id="hero" className="relative min-h-[92vh] flex items-center">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div
           className="w-full h-full"
@@ -32,22 +32,13 @@ export default function Hero({ scrollToSection }: HeroProps) {
         />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 pt-28 sm:pt-32">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-14 pt-24 sm:pt-24">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div
-              className="inline-block px-4 py-2 backdrop-blur-sm border rounded-full mb-5"
-              style={{ backgroundColor: "rgba(201, 168, 124, 0.2)", borderColor: "rgba(201, 168, 124, 0.3)" }}
-            >
-              <span className="text-sm font-medium" style={{ color: "#F8F4EF" }}>
-                {t("hero.badge")}
-              </span>
-            </div>
-
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5 leading-snug">
               {t("hero.titleStart")}
               <span style={{ color: "#C9A87C" }}>
@@ -85,24 +76,50 @@ export default function Hero({ scrollToSection }: HeroProps) {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="grid grid-cols-3 gap-2 sm:gap-6 mt-8 sm:mt-12 pt-6 sm:pt-8 border-t"
-            style={{ borderColor: "rgba(255, 255, 255, 0.1)" }}
-          >
+          <div className="grid grid-cols-3 gap-3 sm:gap-5 mt-6 sm:mt-8 pt-4 sm:pt-6 border-t" style={{ borderColor: "rgba(201, 168, 124, 0.2)" }}>
             {[
-              { value: t("hero.stat1Value"), label: t("hero.stat1Label") },
-              { value: t("hero.stat2Value"), label: t("hero.stat2Label") },
-              { value: t("hero.stat3Value"), label: t("hero.stat3Label") },
-            ].map((stat, index) => (
-              <div key={index} className="text-center px-1">
-                <div className="text-lg sm:text-2xl md:text-3xl font-bold text-white mb-1 leading-tight">{stat.value}</div>
-                <div className="text-xs sm:text-sm leading-snug" style={{ color: "#F8F4EF" }}>{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
+              { value: t("hero.stat1Value"), label: t("hero.stat1Label"), icon: Award, suffix: "+" },
+              { value: t("hero.stat2Value"), label: t("hero.stat2Label"), icon: Star, suffix: "" },
+              { value: t("hero.stat3Value"), label: t("hero.stat3Label"), icon: Sparkles, suffix: "" },
+            ].map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.12 }}
+                  whileHover={{ scale: 1.04, y: -2 }}
+                  className="flex flex-col items-center text-center px-1.5 sm:px-3 py-3 sm:py-4 rounded-2xl cursor-default overflow-hidden"
+                  style={{
+                    background: "#503646",
+                    border: "1px solid rgba(201, 168, 124, 0.25)",
+                    boxShadow: "0 4px 24px rgba(0,0,0,0.15)",
+                  }}
+                >
+                  {/* Linha 1: ícone — altura fixa para alinhar entre cards */}
+                  <div className="h-6 sm:h-8 flex items-center justify-center">
+                    <Icon size={18} className="opacity-80" style={{ color: "#C9A87C" }} />
+                  </div>
+                  {/* Linha 2: valor — altura fixa, fonte uniforme */}
+                  <div className="h-10 sm:h-13 flex items-center justify-center mt-1">
+                    <span
+                      className="text-base sm:text-2xl md:text-3xl font-bold leading-none"
+                      style={{ color: "#C9A87C", textShadow: "0 2px 10px rgba(201,168,124,0.35)", hyphens: "auto", wordBreak: "break-word" }}
+                    >
+                      {stat.value}{stat.suffix}
+                    </span>
+                  </div>
+                  {/* Linha 3: divisor */}
+                  <div className="w-5 h-px my-2 shrink-0" style={{ background: "rgba(201,168,124,0.45)" }} />
+                  {/* Linha 4: label */}
+                  <div className="text-[11px] sm:text-xs leading-snug font-medium" style={{ color: "rgba(248,244,239,0.85)" }}>
+                    {stat.label}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
@@ -122,7 +139,7 @@ export default function Hero({ scrollToSection }: HeroProps) {
       </motion.div>
 
       <div
-        className="absolute bottom-0 left-0 right-0 h-32 z-10"
+        className="absolute bottom-0 left-0 right-0 h-32 z-[1]"
         style={{ background: "linear-gradient(to top, #FFFFFF, transparent)" }}
       />
     </div>
