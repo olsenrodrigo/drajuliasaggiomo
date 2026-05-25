@@ -98,11 +98,16 @@ export default function Contact() {
                 <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#F8F4EF" }}>
                   <Mail className="w-5 h-5" style={{ color: "#C9A87C" }} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="font-bold mb-1" style={{ color: "#212529" }}>{t("contact.emailLabel")}</p>
-                  <p className="text-sm break-all" style={{ color: "#3C3C3C" }}>
+                  <a
+                    href={`mailto:${t("contact.emailAddress")}`}
+                    className="text-xs font-medium hover:underline whitespace-nowrap block truncate"
+                    style={{ color: "#6a363d" }}
+                    title={t("contact.emailAddress")}
+                  >
                     {t("contact.emailAddress")}
-                  </p>
+                  </a>
                 </div>
               </div>
             </div>

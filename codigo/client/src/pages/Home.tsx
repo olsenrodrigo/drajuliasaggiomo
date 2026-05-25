@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import HeroImageBanner from "@/components/HeroImageBanner";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Treatments from "@/components/Treatments";
@@ -47,6 +48,7 @@ export default function Home() {
       <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
       <main>
         <Hero scrollToSection={scrollToSection} />
+        <HeroImageBanner />
         <About />
         <Services />
         <Treatments />

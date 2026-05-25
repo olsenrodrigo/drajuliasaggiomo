@@ -23,7 +23,7 @@ export async function sendContactEmail(data: ContactData) {
 
   await transporter.sendMail({
     /* WHITELABEL: Substituir nome do remetente */
-    from: `"Site Medico" <${process.env.SMTP_USER}>`,
+    from: `"Dra. Júlia Saggiomo" <${process.env.SMTP_USER}>`,
     to,
     replyTo: data.email,
     subject: `Nova consulta – ${data.name}`,
