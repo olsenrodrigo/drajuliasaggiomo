@@ -14,15 +14,22 @@ export async function registerRoutes(
     if (!result.success) {
       return res.status(400).json({ message: fromError(result.error).toString() });
     }
-    const message = await storage.createContactMessage(result.data);
+
+    if (process.env.DATABASE_URL) {
+      try {
+        await storage.createContactMessage(result.data);
+      } catch (err) {
+        console.error("Falha ao salvar mensagem no banco:", err);
+      }
+    }
 
     try {
       await sendContactEmail(result.data);
+      return res.status(201).json({ success: true });
     } catch (err) {
       console.error("Falha ao enviar e-mail de contato:", err);
+      return res.status(500).json({ message: "Erro ao enviar mensagem. Tente novamente mais tarde." });
     }
-
-    return res.status(201).json({ success: true, id: message.id });
   });
 
   return httpServer;
