@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, Play, MapPin, Clock, Phone, Wifi, Car } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const SECTIONS = {
   recepcao: [
@@ -26,6 +27,8 @@ const SECTIONS = {
 };
 
 export default function Instituto() {
+  const { t, i18n } = useTranslation();
+  const homePath = i18n.language === "pt" ? "/" : `/${i18n.language}`;
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoPlaying, setVideoPlaying] = useState(false);
 
@@ -51,12 +54,12 @@ export default function Instituto() {
       >
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link
-            href="/"
+            href={homePath}
             className="flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-70"
             style={{ color: "#6a363d" }}
           >
             <ArrowLeft className="w-4 h-4" />
-            <span className="hidden sm:inline">Voltar ao site</span>
+            <span className="hidden sm:inline">{t("instituto.backToSite")}</span>
           </Link>
           <img
             src="/imagens/o_instituto_saggiomo/institutologo.png"
@@ -104,7 +107,7 @@ export default function Instituto() {
               <Play className="w-8 h-8 fill-white text-white ml-1" />
             </motion.div>
             <span className="text-white text-xs tracking-[0.2em] uppercase font-light">
-              Assista ao Instituto
+              {t("instituto.watchInstituto")}
             </span>
           </button>
         )}
@@ -119,7 +122,7 @@ export default function Instituto() {
               textShadow: "0 2px 40px rgba(0,0,0,0.5)",
             }}
           >
-            Instituto Saggiomo
+            {t("instituto.title")}
           </h1>
         </div>
       </section>
@@ -132,24 +135,22 @@ export default function Instituto() {
               className="inline-block px-4 py-2 rounded-full mb-6"
               style={{ backgroundColor: "rgba(201, 168, 124, 0.15)" }}
             >
-              <span className="text-sm font-medium" style={{ color: "#6a363d" }}>Nossa Filosofia</span>
+              <span className="text-sm font-medium" style={{ color: "#6a363d" }}>{t("instituto.philosophyBadge")}</span>
             </div>
             <h2
               className="text-4xl md:text-5xl font-bold mb-8"
               style={{ color: "#212529" }}
             >
-              Mais do que uma clínica
+              {t("instituto.philosophyTitle")}
             </h2>
             <p className="text-xl leading-relaxed mb-6" style={{ color: "#3C3C3C" }}>
-              O Instituto Saggiomo é uma clínica conceito, disruptiva e pensada para ser um espaço de cuidado, confiança e
-              transformação. Cada detalhe do ambiente foi projetado para proporcionar tranquilidade, conforto e um toque
-              refinado de arte — para que a paciente desfrute plenamente de toda a sua jornada.
+              {t("instituto.philosophyDesc1")}
             </p>
-            <p className="text-lg leading-relaxed" style={{ color: "#3C3C3C" }}>
-              Localizado no coração de Vila Cordeiro, em São Paulo, o Instituto ocupa um dos endereços comerciais mais
-              prestigiados da cidade — o <strong>Capital Corporate Offices</strong> na Av. Dr. Chucri Zaidan, referência
-              em sofisticação e excelência na zona sul paulistana.
-            </p>
+            <p
+              className="text-lg leading-relaxed"
+              style={{ color: "#3C3C3C" }}
+              dangerouslySetInnerHTML={{ __html: t("instituto.philosophyDesc2") }}
+            />
             <blockquote
               className="mt-12 p-7 rounded-2xl border-l-4 text-left"
               style={{ borderColor: "#C9A87C", backgroundColor: "rgba(201, 168, 124, 0.07)" }}
@@ -158,8 +159,7 @@ export default function Instituto() {
                 className="text-xl italic font-medium leading-relaxed"
                 style={{ color: "#6a363d", fontFamily: "Cormorant Garamond, serif" }}
               >
-                "Acredito que a verdadeira beleza está na harmonia e na confiança que cada paciente conquista ao se sentir
-                bem consigo mesmo."
+                &ldquo;{t("instituto.philosophyQuote")}&rdquo;
               </p>
               <footer className="mt-4 text-sm font-semibold tracking-wider" style={{ color: "#C9A87C" }}>
                 — Dra. Júlia Saggiomo
@@ -174,21 +174,9 @@ export default function Instituto() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              {
-                num: "01",
-                title: "Ambiente com Toque de Arte",
-                desc: "Cada espaço foi projetado com curadoria artística exclusiva — uma atmosfera que transmite serenidade e sofisticação, desde o primeiro passo na recepção até o pós-procedimento.",
-              },
-              {
-                num: "02",
-                title: "Tecnologia Certificada",
-                desc: "Equipamentos de última geração e protocolos atualizados, incluindo o sistema Laser Fotona certificado — para resultados precisos, seguros e duradouros em cirurgias e tratamentos.",
-              },
-              {
-                num: "03",
-                title: "Atendimento Personalizado",
-                desc: "Cada paciente é única. A jornada é inteiramente personalizada, da consulta inicial ao acompanhamento pós-procedimento, com escuta ativa e decisão sempre compartilhada.",
-              },
+              { num: "01", title: t("instituto.diff1Title"), desc: t("instituto.diff1Desc") },
+              { num: "02", title: t("instituto.diff2Title"), desc: t("instituto.diff2Desc") },
+              { num: "03", title: t("instituto.diff3Title"), desc: t("instituto.diff3Desc") },
             ].map((d, i) => (
               <motion.div
                 key={i}
@@ -227,10 +215,10 @@ export default function Instituto() {
                 className="text-3xl font-bold mb-2"
                 style={{ color: "#212529" }}
               >
-                A Recepção
+                {t("instituto.receptionTitle")}
               </h2>
               <p style={{ color: "#3C3C3C" }}>
-                O primeiro contato com o Instituto — um ambiente que acolhe com elegância e serenidade.
+                {t("instituto.receptionDesc")}
               </p>
             </motion.div>
             <motion.div
@@ -265,10 +253,10 @@ export default function Instituto() {
                 className="text-3xl font-bold mb-2"
                 style={{ color: "#212529" }}
               >
-                Salas de Consulta e Procedimentos
+                {t("instituto.roomsTitle")}
               </h2>
               <p style={{ color: "#3C3C3C" }}>
-                Ambientes projetados para o máximo de conforto, privacidade e eficiência clínica.
+                {t("instituto.roomsDesc")}
               </p>
             </motion.div>
             <div className="grid md:grid-cols-3 gap-4">
@@ -308,10 +296,10 @@ export default function Instituto() {
                 className="text-3xl font-bold mb-2"
                 style={{ color: "#212529" }}
               >
-                Ambientação &amp; Arte
+                {t("instituto.ambTitle")}
               </h2>
               <p style={{ color: "#3C3C3C" }}>
-                Cada detalhe pensado para proporcionar uma experiência sensorial única — arte, natureza e sofisticação integradas.
+                {t("instituto.ambDesc")}
               </p>
             </motion.div>
             <div className="columns-2 lg:columns-4 gap-4">
@@ -351,10 +339,10 @@ export default function Instituto() {
                 className="text-3xl font-bold mb-2"
                 style={{ color: "#212529" }}
               >
-                Dra. Júlia em Ação
+                {t("instituto.actionTitle")}
               </h2>
               <p style={{ color: "#3C3C3C" }}>
-                Excelência técnica e cuidado humanizado em cada atendimento — da consulta ao pós-operatório.
+                {t("instituto.actionDesc")}
               </p>
             </motion.div>
             <div className="grid md:grid-cols-3 gap-4">
@@ -391,7 +379,7 @@ export default function Instituto() {
               className="text-3xl font-bold mb-10 text-center"
               style={{ color: "#212529" }}
             >
-              Visite o Instituto
+              {t("instituto.visitTitle")}
             </motion.h2>
             <div className="grid lg:grid-cols-2 gap-10">
               {/* Info */}
@@ -409,7 +397,7 @@ export default function Instituto() {
                     <MapPin className="w-5 h-5" style={{ color: "#C9A87C" }} />
                   </div>
                   <div>
-                    <p className="font-semibold mb-1" style={{ color: "#212529" }}>Endereço</p>
+                    <p className="font-semibold mb-1" style={{ color: "#212529" }}>{t("instituto.addressLabel")}</p>
                     <p className="text-sm leading-relaxed" style={{ color: "#3C3C3C" }}>
                       Av. Dr. Chucri Zaidan, 1550 — Conj. 1817/1818<br />
                       Vila Cordeiro, São Paulo/SP<br />
@@ -426,10 +414,10 @@ export default function Instituto() {
                     <Clock className="w-5 h-5" style={{ color: "#C9A87C" }} />
                   </div>
                   <div>
-                    <p className="font-semibold mb-1" style={{ color: "#212529" }}>Horários</p>
+                    <p className="font-semibold mb-1" style={{ color: "#212529" }}>{t("instituto.hoursLabel")}</p>
                     <p className="text-sm leading-relaxed" style={{ color: "#3C3C3C" }}>
-                      Segunda a Sexta: 9h às 18h<br />
-                      Sábado: 9h às 13h
+                      {t("instituto.hoursLine1")}<br />
+                      {t("instituto.hoursLine2")}
                     </p>
                   </div>
                 </div>
@@ -442,7 +430,7 @@ export default function Instituto() {
                     <Phone className="w-5 h-5" style={{ color: "#C9A87C" }} />
                   </div>
                   <div>
-                    <p className="font-semibold mb-1" style={{ color: "#212529" }}>Contato</p>
+                    <p className="font-semibold mb-1" style={{ color: "#212529" }}>{t("instituto.contactLabel")}</p>
                     <p className="text-sm leading-relaxed" style={{ color: "#3C3C3C" }}>
                       WhatsApp: (11) 93074-4540<br />
                       contato@institutosaggiomo.com.br
@@ -456,11 +444,11 @@ export default function Instituto() {
                 >
                   <span className="flex items-center gap-2">
                     <Wifi className="w-4 h-4" style={{ color: "#C9A87C" }} />
-                    Wi-Fi gratuito
+                    {t("instituto.wifiLabel")}
                   </span>
                   <span className="flex items-center gap-2">
                     <Car className="w-4 h-4" style={{ color: "#C9A87C" }} />
-                    Estacionamento
+                    {t("instituto.parkingLabel")}
                   </span>
                 </div>
 
@@ -469,7 +457,7 @@ export default function Instituto() {
                     className="text-xs font-semibold tracking-widest uppercase mb-3"
                     style={{ color: "#C9A87C" }}
                   >
-                    Atendimento Particular
+                    {t("instituto.privateLabel")}
                   </p>
                   <a
                     href="https://wa.me/5511930744540"
@@ -478,7 +466,7 @@ export default function Instituto() {
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm text-white transition-opacity hover:opacity-90"
                     style={{ background: "linear-gradient(135deg, #C9A87C 0%, #6a363d 100%)" }}
                   >
-                    Agendar via WhatsApp
+                    {t("instituto.scheduleWhatsApp")}
                   </a>
                 </div>
               </motion.div>
@@ -518,11 +506,10 @@ export default function Instituto() {
             style={{ background: "linear-gradient(135deg, #C9A87C 0%, #6a363d 100%)" }}
           >
             <h2 className="text-4xl font-bold mb-5 text-white">
-              Venha nos conhecer
+              {t("instituto.ctaTitle")}
             </h2>
             <p className="text-xl mb-10 max-w-2xl mx-auto" style={{ color: "#F8F4EF" }}>
-              Agende uma consulta e experiencie pessoalmente o ambiente único do Instituto Saggiomo —
-              onde cada detalhe foi pensado para você.
+              {t("instituto.ctaDesc")}
             </p>
             <a
               href="https://wa.me/5511930744540"
@@ -531,7 +518,7 @@ export default function Instituto() {
               className="inline-block px-8 py-4 bg-white rounded-full font-semibold transition-colors cursor-pointer hover:bg-opacity-90"
               style={{ color: "#6a363d" }}
             >
-              Agendar Consulta via WhatsApp
+              {t("instituto.ctaButton")}
             </a>
           </motion.div>
         </div>

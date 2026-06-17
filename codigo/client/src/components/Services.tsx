@@ -75,24 +75,24 @@ export default function Services() {
                     className="text-xs font-semibold tracking-widest uppercase"
                     style={{ color: "#C9A87C" }}
                   >
-                    Galeria de Resultados
+                    {t("services.galleryBadge")}
                   </span>
                 </div>
                 <h4
                   className="text-2xl md:text-3xl font-bold mb-2"
                   style={{ color: "#212529" }}
                 >
-                  Veja as transformações reais
+                  {t("services.galleryTitle")}
                 </h4>
                 <p className="text-base max-w-md" style={{ color: "#3C3C3C" }}>
-                  Resultados de pacientes reais — blefaroplastia, lipoescultura, abdominoplastia, lifting facial e muito mais.
+                  {t("services.galleryDescription")}
                 </p>
               </div>
               <div
                 className="flex-shrink-0 flex items-center gap-3 px-7 py-4 rounded-full font-semibold text-base text-white transition-all group-hover:shadow-md"
                 style={{ background: "linear-gradient(135deg, #C9A87C 0%, #6a363d 100%)" }}
               >
-                Ver Galeria
+                {t("services.galleryButton")}
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </div>
             </div>

@@ -80,7 +80,7 @@ export default function Locations() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"
             style={{ background: "linear-gradient(135deg, #C9A87C 0%, #6a363d 100%)" }}
           >
-            Conhecer o Instituto Saggiomo
+            {t("locations.knowButton")}
             <ArrowRight className="w-4 h-4" />
           </Link>
         </motion.div>
@@ -163,7 +163,7 @@ export default function Locations() {
             >
               <img src="/mandala.png" alt="" className="w-4 h-4 flex-shrink-0" />
               <span className="hidden sm:inline">{t("locations.mapTitle")} — {t("locations.addressLine1")}</span>
-              <span className="sm:hidden">Abrir no Google Maps</span>
+              <span className="sm:hidden">{t("locations.openMaps")}</span>
             </a>
           </motion.div>
         </div>

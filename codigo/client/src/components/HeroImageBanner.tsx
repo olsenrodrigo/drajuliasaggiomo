@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function HeroImageBanner() {
+  const { t } = useTranslation();
+
   return (
     <div className="w-full bg-white py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,12 +35,12 @@ export default function HeroImageBanner() {
               className="text-xs font-semibold tracking-widest uppercase mb-2"
               style={{ color: "rgba(201, 168, 124, 0.9)" }}
             >
-              Excelência em Resultados
+              {t("heroBanner.badge")}
             </p>
             <h4
               className="text-xl sm:text-2xl font-bold leading-snug text-white"
             >
-              Cirurgias combinadas<br />para resultados integrados
+              {t("heroBanner.title")}<br />{t("heroBanner.subtitle")}
             </h4>
           </div>
         </motion.div>

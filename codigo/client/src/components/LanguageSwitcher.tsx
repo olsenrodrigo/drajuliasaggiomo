@@ -22,12 +22,15 @@ const languages = [
     path: "/en",
     label: "English",
     flag: (
-      <svg width="24" height="16" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg">
-        <rect width="640" height="480" fill="#012169" />
-        <path d="M0,0 L640,480 M640,0 L0,480" stroke="white" strokeWidth="60" />
-        <path d="M0,0 L640,480 M640,0 L0,480" stroke="#C8102E" strokeWidth="40" />
-        <path d="M320,0 V480 M0,240 H640" stroke="white" strokeWidth="100" />
-        <path d="M320,0 V480 M0,240 H640" stroke="#C8102E" strokeWidth="60" />
+      <svg width="24" height="16" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+        <rect width="60" height="40" fill="#B22234" />
+        <rect y="3.07" width="60" height="3.07" fill="white" />
+        <rect y="9.23" width="60" height="3.07" fill="white" />
+        <rect y="15.38" width="60" height="3.07" fill="white" />
+        <rect y="21.54" width="60" height="3.07" fill="white" />
+        <rect y="27.69" width="60" height="3.07" fill="white" />
+        <rect y="33.85" width="60" height="3.07" fill="white" />
+        <rect width="24" height="21.54" fill="#3C3B6E" />
       </svg>
     ),
   },

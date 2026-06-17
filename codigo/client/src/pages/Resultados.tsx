@@ -2,15 +2,26 @@ import { useState, useEffect, useCallback } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 type Img = { src: string; alt: string };
-type Procedure = { id: string; label: string; description: string; images: Img[] };
+type ProcedureId =
+  | "blefaroplastia"
+  | "lipoaspiracao"
+  | "abdominoplastia"
+  | "mamoplastia"
+  | "lifting_facial"
+  | "laser"
+  | "lipo_papada"
+  | "fotobiomodulacao"
+  | "cirurgias_combinadas"
+  | "lipedema";
 
-const PROCEDURES: Procedure[] = [
+type ProcedureData = { id: ProcedureId; images: Img[] };
+
+const PROCEDURES_DATA: ProcedureData[] = [
   {
     id: "blefaroplastia",
-    label: "Blefaroplastia",
-    description: "Remove excesso de pele, bolsas de gordura e músculo ao redor dos olhos — olhar mais jovem, descansado e natural. Pode ser complementada com Laser, Skinboosters ou transferência de gordura para resultados ainda mais impactantes. Pós-operatório indolor e recuperação rápida.",
     images: Array.from({ length: 12 }, (_, i) => ({
       src: `/imagens/blefaroplastia/blefaroplastia${i + 1}.jpg`,
       alt: `Resultado blefaroplastia ${i + 1}`,
@@ -18,8 +29,6 @@ const PROCEDURES: Procedure[] = [
   },
   {
     id: "lipoaspiracao",
-    label: "Lipoaspiração & Lipoescultura",
-    description: "Remove gordura localizada e remodela outras áreas com a gordura retirada — disponível do Soft Definition ao High Definition (HD). Pode ser associada à Abdominoplastia para refinamento ainda maior do contorno corporal.",
     images: [
       ...Array.from({ length: 4 }, (_, i) => ({
         src: `/imagens/lipoaspiracao_lipoescultura/lipoaspiracao_lipoescultura${i + 1}.jpg`,
@@ -30,8 +39,6 @@ const PROCEDURES: Procedure[] = [
   },
   {
     id: "abdominoplastia",
-    label: "Abdominoplastia",
-    description: "Remove excesso de pele e gordura do abdômen e corrige flacidez muscular e diástase — indicada após grandes perdas de peso ou gestação. Quando associada à Lipoaspiração ou Lipoescultura, os resultados de contorno e definição são ainda mais expressivos.",
     images: [
       { src: `/imagens/abdominoplastia/abdominoplastia1.jpg`, alt: "Resultado abdominoplastia 1" },
       { src: `/imagens/abdominoplastia/abdominoplastia2.jpg`, alt: "Resultado abdominoplastia 2" },
@@ -39,8 +46,6 @@ const PROCEDURES: Procedure[] = [
   },
   {
     id: "mamoplastia",
-    label: "Mamoplastia & Mastopexia",
-    description: "A mamoplastia aumenta ou reduz o volume das mamas melhorando proporção e autoestima. A mastopexia reposiciona e devolve firmeza aos seios, podendo ser associada a próteses. Cicatrizes posicionadas nas dobras naturais da pele com técnicas cada vez mais discretas.",
     images: Array.from({ length: 3 }, (_, i) => ({
       src: `/imagens/mamoplastia_mastopexia/mamoplastia_mastopexia${i + 1}.jpg`,
       alt: `Resultado mamoplastia ${i + 1}`,
@@ -48,8 +53,6 @@ const PROCEDURES: Procedure[] = [
   },
   {
     id: "lifting_facial",
-    label: "Lifting Facial",
-    description: "Técnica avançada que atua nas camadas mais profundas da face, reposicionando músculos e tecidos para resultado natural e duradouro. Trata a causa do envelhecimento facial — não apenas seus sinais. Procedimentos superficiais não alcançam os mesmos efeitos estruturais.",
     images: [
       { src: `/imagens/lifting_facial/lifting_facial1.jpg`, alt: "Resultado lifting facial 1" },
       { src: `/imagens/lifting_facial/lifting_facial2.jpg`, alt: "Resultado lifting facial 2" },
@@ -57,8 +60,6 @@ const PROCEDURES: Procedure[] = [
   },
   {
     id: "laser",
-    label: "Laser & Tecnologias",
-    description: "Tratamentos com Laser Fotona — o mais seguro e versátil do mundo. Protocolos incluem Fotona 6D (rejuvenescimento facial profundo), Smooth Eyes, IntimaLase, IncontiLase, Tight Sculpting e tratamento de flacidez corporal. Resultados visíveis com mínima recuperação.",
     images: [
       ...Array.from({ length: 8 }, (_, i) => ({
         src: `/imagens/laser/laser${i + 1}.jpg`,
@@ -70,8 +71,6 @@ const PROCEDURES: Procedure[] = [
   },
   {
     id: "lipo_papada",
-    label: "Lipo de Papada",
-    description: "Definição do contorno facial com eliminação da gordura submentoniana.",
     images: [
       { src: `/imagens/lipo_de_papada/lipo_de_papada1.jpg`, alt: "Resultado lipo papada 1" },
       { src: `/imagens/lipo_de_papada/lipo_de_papada2.jpg`, alt: "Resultado lipo papada 2" },
@@ -80,8 +79,6 @@ const PROCEDURES: Procedure[] = [
   },
   {
     id: "fotobiomodulacao",
-    label: "Fotobiomodulação",
-    description: "Ciência aplicada à regeneração celular — atua no metabolismo mitocondrial modulando inflamação e dor. Indicada para dor crônica e aguda, cicatrização de feridas, fibrose pós-lipoaspiração, nódulos de bioestimuladores, lipedema e recuperação pós-operatória.",
     images: [
       { src: `/imagens/fotobiomodulacao/fotobiomodulacao1.jpg`, alt: "Resultado fotobiomodulação 1" },
       { src: `/imagens/fotobiomodulacao/fotobiomodulacao2.jpg`, alt: "Resultado fotobiomodulação 2" },
@@ -89,8 +86,6 @@ const PROCEDURES: Procedure[] = [
   },
   {
     id: "cirurgias_combinadas",
-    label: "Cirurgias Combinadas",
-    description: "Múltiplos procedimentos em um único ato cirúrgico com planejamento integrado.",
     images: Array.from({ length: 5 }, (_, i) => ({
       src: `/imagens/cirurgias_combinadas/cirurgias_combinadas${i + 1}.jpg`,
       alt: `Resultado cirurgias combinadas ${i + 1}`,
@@ -98,8 +93,6 @@ const PROCEDURES: Procedure[] = [
   },
   {
     id: "lipedema",
-    label: "Lipedema",
-    description: "Protocolo não cirúrgico e estratégico que atua na inflamação como raiz do problema. Combinação de reeducação alimentar anti-inflamatória, atividade física orientada e fotobiomodulação para redução de dor, inchaço, retenção de líquidos e melhora da qualidade de vida.",
     images: [
       { src: `/imagens/lipedema/lipedema1.jpg`, alt: "Resultado lipedema 1" },
     ],
@@ -107,12 +100,16 @@ const PROCEDURES: Procedure[] = [
 ];
 
 export default function Resultados() {
-  const [activeId, setActiveId] = useState(PROCEDURES[0].id);
+  const { t, i18n } = useTranslation();
+  const homePath = i18n.language === "pt" ? "/" : `/${i18n.language}`;
+  const [activeId, setActiveId] = useState<ProcedureId>(PROCEDURES_DATA[0].id);
   const [lightbox, setLightbox] = useState<{ images: Img[]; index: number } | null>(null);
 
-  const active = PROCEDURES.find(p => p.id === activeId)!;
+  const activeData = PROCEDURES_DATA.find(p => p.id === activeId)!;
+  const activeLabel = t(`resultados.proc_${activeId}_label`);
+  const activeDescription = t(`resultados.proc_${activeId}_desc`);
 
-  const openLightbox = (index: number) => setLightbox({ images: active.images, index });
+  const openLightbox = (index: number) => setLightbox({ images: activeData.images, index });
   const closeLightbox = useCallback(() => setLightbox(null), []);
   const prevImage = useCallback(() =>
     setLightbox(lb => lb ? { ...lb, index: (lb.index - 1 + lb.images.length) % lb.images.length } : null), []);
@@ -141,6 +138,9 @@ export default function Resultados() {
     return () => { document.title = "Dra. Júlia Saggiomo — Cirurgia Plástica"; };
   }, []);
 
+  const imageCount = activeData.images.length;
+  const resultLabel = imageCount !== 1 ? t("resultados.results") : t("resultados.result");
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#F8F4EF" }}>
 
@@ -151,12 +151,12 @@ export default function Resultados() {
       >
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <Link
-            href="/"
+            href={homePath}
             className="flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-70"
             style={{ color: "#6a363d" }}
           >
             <ArrowLeft className="w-4 h-4" />
-            <span className="hidden sm:inline">Voltar ao site</span>
+            <span className="hidden sm:inline">{t("resultados.backToSite")}</span>
           </Link>
           <img src="/logo_texto.png" alt="Dra. Júlia Saggiomo" className="h-8 w-auto" />
           <div style={{ width: 96 }} />
@@ -173,16 +173,16 @@ export default function Resultados() {
           className="inline-block px-4 py-2 rounded-full mb-5"
           style={{ backgroundColor: "rgba(201, 168, 124, 0.15)" }}
         >
-          <span className="text-sm font-medium" style={{ color: "#6a363d" }}>Galeria de Resultados</span>
+          <span className="text-sm font-medium" style={{ color: "#6a363d" }}>{t("resultados.galleryBadge")}</span>
         </div>
         <h1
           className="text-4xl md:text-5xl font-bold mb-4"
           style={{ color: "#212529" }}
         >
-          Resultados dos Procedimentos
+          {t("resultados.galleryTitle")}
         </h1>
         <p className="text-lg max-w-2xl mx-auto" style={{ color: "#3C3C3C" }}>
-          Transformações reais realizadas com técnica, segurança e cuidado personalizado.
+          {t("resultados.galleryDesc")}
         </p>
       </motion.div>
 
@@ -193,7 +193,7 @@ export default function Resultados() {
       >
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-2 justify-center">
-            {PROCEDURES.map(p => (
+            {PROCEDURES_DATA.map(p => (
               <button
                 key={p.id}
                 onClick={() => setActiveId(p.id)}
@@ -205,7 +205,7 @@ export default function Resultados() {
                   boxShadow: activeId === p.id ? "0 2px 8px rgba(106,54,61,0.25)" : "none",
                 }}
               >
-                {p.label}
+                {t(`resultados.proc_${p.id}_label`)}
               </button>
             ))}
           </div>
@@ -229,18 +229,18 @@ export default function Resultados() {
                   className="text-3xl font-bold mb-1"
                   style={{ color: "#212529" }}
                 >
-                  {active.label}
+                  {activeLabel}
                 </h2>
-                <p className="text-base" style={{ color: "#3C3C3C" }}>{active.description}</p>
+                <p className="text-base" style={{ color: "#3C3C3C" }}>{activeDescription}</p>
               </div>
               <span className="text-sm font-medium px-3 py-1 rounded-full" style={{ backgroundColor: "rgba(201,168,124,0.15)", color: "#C9A87C" }}>
-                {active.images.length} resultado{active.images.length !== 1 ? "s" : ""}
+                {imageCount} {resultLabel}
               </span>
             </div>
 
             {/* Masonry grid */}
             <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
-              {active.images.map((img, i) => (
+              {activeData.images.map((img, i) => (
                 <motion.div
                   key={img.src}
                   className="break-inside-avoid mb-4 cursor-pointer group relative overflow-hidden rounded-2xl shadow-sm"
@@ -287,7 +287,7 @@ export default function Resultados() {
               className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center transition-colors hover:bg-white/20"
               style={{ background: "rgba(255,255,255,0.1)", color: "white" }}
               onClick={closeLightbox}
-              aria-label="Fechar"
+              aria-label={t("resultados.closeLabel")}
             >
               <X className="w-5 h-5" />
             </button>
@@ -305,7 +305,7 @@ export default function Resultados() {
               className="absolute left-3 md:left-6 w-11 h-11 rounded-full flex items-center justify-center transition-colors hover:bg-white/20"
               style={{ background: "rgba(255,255,255,0.1)", color: "white" }}
               onClick={(e) => { e.stopPropagation(); prevImage(); }}
-              aria-label="Anterior"
+              aria-label={t("resultados.prevLabel")}
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -328,14 +328,14 @@ export default function Resultados() {
               className="absolute right-3 md:right-6 w-11 h-11 rounded-full flex items-center justify-center transition-colors hover:bg-white/20"
               style={{ background: "rgba(255,255,255,0.1)", color: "white" }}
               onClick={(e) => { e.stopPropagation(); nextImage(); }}
-              aria-label="Próxima"
+              aria-label={t("resultados.nextLabel")}
             >
               <ChevronRight className="w-6 h-6" />
             </button>
 
             {/* Procedure label */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm opacity-60 pointer-events-none">
-              {active.label}
+              {activeLabel}
             </div>
           </motion.div>
         )}
@@ -344,10 +344,10 @@ export default function Resultados() {
       {/* Footer CTA */}
       <div className="rounded-3xl mx-4 md:mx-8 mb-16 p-12 text-center text-white" style={{ background: "linear-gradient(135deg, #C9A87C 0%, #6a363d 100%)" }}>
         <h3 className="text-3xl font-bold mb-4 text-white">
-          Pronta para a sua transformação?
+          {t("resultados.ctaTitle")}
         </h3>
         <p className="text-lg mb-8 max-w-2xl mx-auto" style={{ color: "#F8F4EF" }}>
-          Agende sua consulta e descubra o procedimento ideal para você — com segurança, naturalidade e cuidado personalizado.
+          {t("resultados.ctaDesc")}
         </p>
         <a
           href="https://wa.me/5511930744540"
@@ -356,7 +356,7 @@ export default function Resultados() {
           className="inline-block px-8 py-4 bg-white rounded-full font-semibold transition-colors cursor-pointer hover:bg-opacity-90"
           style={{ color: "#6a363d" }}
         >
-          Agendar Consulta via WhatsApp
+          {t("resultados.ctaButton")}
         </a>
       </div>
     </div>
