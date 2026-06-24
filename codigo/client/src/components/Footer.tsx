@@ -105,6 +105,9 @@ export default function Footer() {
             &copy; {currentYear} {t("footer.copyright")}
             <Heart size={16} className="fill-current" style={{ color: "#C9A87C" }} />
           </p>
+          <p className="mt-1" style={{ fontSize: "0.72rem", color: "rgba(248, 244, 239, 0.45)" }}>
+            SAGGIOMO CLINICA DE CIRURGIA LTDA &nbsp;|&nbsp; CNPJ 25.289.170/0001-69
+          </p>
         </div>
       </div>
     </footer>
