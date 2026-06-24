@@ -400,7 +400,7 @@ export default function Instituto() {
                     <p className="font-semibold mb-1" style={{ color: "#212529" }}>{t("instituto.addressLabel")}</p>
                     <p className="text-sm leading-relaxed" style={{ color: "#3C3C3C" }}>
                       Av. Dr. Chucri Zaidan, 1550 — Conj. 1817/1818<br />
-                      Vila Cordeiro, São Paulo/SP<br />
+                      Vila São Francisco, São Paulo/SP<br />
                       CEP 04711-130
                     </p>
                   </div>
