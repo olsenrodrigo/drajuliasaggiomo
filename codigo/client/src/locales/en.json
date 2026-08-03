@@ -32,6 +32,14 @@
     "title": "Combined surgeries",
     "subtitle": "for integrated results"
   },
+  "resultsCarousel": {
+    "badge": "Before and After",
+    "title": "Real results, natural transformations",
+    "subtitle": "Photos of Dr. Júlia Saggiomo's patients, organized by procedure. Swipe to see more.",
+    "viewProcedure": "View gallery",
+    "viewAll": "See the full gallery",
+    "goTo": "Go to result"
+  },
   "about": {
     "badge": "About the Specialist",
     "name": "Dra. Júlia Saggiomo",

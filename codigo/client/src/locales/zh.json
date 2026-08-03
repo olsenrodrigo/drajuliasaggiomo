@@ -1,4 +1,12 @@
 {
+  "resultsCarousel": {
+    "badge": "术前与术后",
+    "title": "真实效果，自然蜕变",
+    "subtitle": "Júlia Saggiomo 医生患者的照片，按手术项目分类。滑动查看更多。",
+    "viewProcedure": "查看图库",
+    "viewAll": "查看完整图库",
+    "goTo": "前往结果"
+  },
   "navbar": {
     "hero": "首页",
     "about": "关于",

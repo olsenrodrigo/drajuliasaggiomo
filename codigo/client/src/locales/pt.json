@@ -32,6 +32,14 @@
     "title": "Cirurgias combinadas",
     "subtitle": "para resultados integrados"
   },
+  "resultsCarousel": {
+    "badge": "Antes e Depois",
+    "title": "Resultados reais, transformações naturais",
+    "subtitle": "Fotos de pacientes da Dra. Júlia Saggiomo, organizadas por procedimento. Arraste para ver mais.",
+    "viewProcedure": "Ver galeria",
+    "viewAll": "Ver galeria completa",
+    "goTo": "Ir para o resultado"
+  },
   "about": {
     "badge": "Sobre a Especialista",
     "name": "Dra. Júlia Saggiomo",

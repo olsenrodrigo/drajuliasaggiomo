@@ -1,4 +1,12 @@
 {
+  "resultsCarousel": {
+    "badge": "Prima e Dopo",
+    "title": "Risultati reali, trasformazioni naturali",
+    "subtitle": "Foto delle pazienti della Dott.ssa Júlia Saggiomo, organizzate per procedura. Scorri per vedere di più.",
+    "viewProcedure": "Vedi galleria",
+    "viewAll": "Vedi la galleria completa",
+    "goTo": "Vai al risultato"
+  },
   "navbar": {
     "hero": "Inizio",
     "about": "Chi Siamo",
