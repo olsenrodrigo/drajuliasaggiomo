@@ -46,8 +46,15 @@ export default function Hero({ scrollToSection }: HeroProps) {
               </span>
             </h2>
 
-            <p className="text-base sm:text-lg mb-6 leading-relaxed" style={{ color: "#F8F4EF" }}>
+            <p className="text-base sm:text-lg mb-2 leading-relaxed" style={{ color: "#F8F4EF" }}>
               {t("hero.subtitle")}
+            </p>
+
+            <p
+              className="text-xs sm:text-sm mb-6 tracking-wide font-medium"
+              style={{ color: "rgba(201, 168, 124, 0.95)" }}
+            >
+              {t("hero.credentials")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
