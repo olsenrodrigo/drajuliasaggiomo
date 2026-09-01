@@ -1,7 +1,8 @@
 import { useRef, useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft, Play, MapPin, Clock, Phone, Wifi, Car, Sparkles } from "lucide-react";
+import { ArrowLeft, Play, MapPin, Clock, Phone, Wifi, Car } from "lucide-react";
+import DigitalAssistantIcon from "@/components/DigitalAssistantIcon";
 import { useTranslation } from "react-i18next";
 
 const SECTIONS = {
@@ -461,7 +462,7 @@ export default function Instituto() {
                         className="flex items-center gap-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] mb-0.5"
                         style={{ color: "#C9A87C" }}
                       >
-                        <Sparkles className="w-3 h-3 flex-shrink-0" />
+                        <DigitalAssistantIcon size={14} className="flex-shrink-0" strokeWidth={1.8} />
                         {t("instituto.digitalLabel")}
                       </span>
                       <span className="text-sm font-medium group-hover:underline" style={{ color: "#3C3C3C" }}>
