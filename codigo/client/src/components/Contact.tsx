@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2, Loader2, Phone, Mail } from "lucide-react";
+import { Send, CheckCircle2, Loader2, Phone, Mail, Sparkles } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function Contact() {
@@ -83,12 +83,45 @@ export default function Contact() {
                 <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: "#F8F4EF" }}>
                   <Phone className="w-5 h-5" style={{ color: "#C9A87C" }} />
                 </div>
-                <div>
-                  <p className="font-bold mb-1" style={{ color: "#212529" }}>{t("contact.phoneLabel")}</p>
-                  <p className="text-sm" style={{ color: "#3C3C3C" }}>
-                    {t("contact.phoneLine1")}<br />
-                    {t("contact.phoneLine2")}
-                  </p>
+                <div className="min-w-0 flex-1">
+                  <p className="font-bold mb-3" style={{ color: "#212529" }}>{t("contact.phoneLabel")}</p>
+
+                  <a
+                    href="https://wa.me/5511930744540"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block group"
+                  >
+                    <span
+                      className="block text-[0.65rem] font-semibold uppercase tracking-[0.12em] mb-0.5"
+                      style={{ color: "#C9A87C" }}
+                    >
+                      {t("contact.whatsappLabel")}
+                    </span>
+                    <span className="text-sm font-medium group-hover:underline" style={{ color: "#3C3C3C" }}>
+                      {t("contact.whatsappNumber")}
+                    </span>
+                  </a>
+
+                  <div className="my-3 h-px" style={{ backgroundColor: "rgba(201, 168, 124, 0.25)" }} />
+
+                  <a
+                    href="https://wa.me/5511955030129"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block group"
+                  >
+                    <span
+                      className="flex items-center gap-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] mb-0.5"
+                      style={{ color: "#C9A87C" }}
+                    >
+                      <Sparkles className="w-3 h-3 flex-shrink-0" />
+                      {t("contact.digitalLabel")}
+                    </span>
+                    <span className="text-sm font-medium group-hover:underline" style={{ color: "#3C3C3C" }}>
+                      {t("contact.digitalNumber")}
+                    </span>
+                  </a>
                 </div>
               </div>
             </div>

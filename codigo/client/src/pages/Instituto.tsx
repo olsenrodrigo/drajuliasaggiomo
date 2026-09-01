@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft, Play, MapPin, Clock, Phone, Wifi, Car } from "lucide-react";
+import { ArrowLeft, Play, MapPin, Clock, Phone, Wifi, Car, Sparkles } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const SECTIONS = {
@@ -429,12 +429,62 @@ export default function Instituto() {
                   >
                     <Phone className="w-5 h-5" style={{ color: "#C9A87C" }} />
                   </div>
-                  <div>
-                    <p className="font-semibold mb-1" style={{ color: "#212529" }}>{t("instituto.contactLabel")}</p>
-                    <p className="text-sm leading-relaxed" style={{ color: "#3C3C3C" }}>
-                      WhatsApp: (11) 93074-4540<br />
-                      contato@institutosaggiomo.com.br
-                    </p>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-semibold mb-3" style={{ color: "#212529" }}>{t("instituto.contactLabel")}</p>
+
+                    <a
+                      href="https://wa.me/5511930744540"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block group"
+                    >
+                      <span
+                        className="block text-[0.65rem] font-semibold uppercase tracking-[0.12em] mb-0.5"
+                        style={{ color: "#C9A87C" }}
+                      >
+                        WhatsApp
+                      </span>
+                      <span className="text-sm font-medium group-hover:underline" style={{ color: "#3C3C3C" }}>
+                        (11) 93074-4540
+                      </span>
+                    </a>
+
+                    <div className="my-3 h-px" style={{ backgroundColor: "rgba(201, 168, 124, 0.25)" }} />
+
+                    <a
+                      href="https://wa.me/5511955030129"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block group"
+                    >
+                      <span
+                        className="flex items-center gap-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] mb-0.5"
+                        style={{ color: "#C9A87C" }}
+                      >
+                        <Sparkles className="w-3 h-3 flex-shrink-0" />
+                        {t("instituto.digitalLabel")}
+                      </span>
+                      <span className="text-sm font-medium group-hover:underline" style={{ color: "#3C3C3C" }}>
+                        (11) 95503-0129
+                      </span>
+                    </a>
+
+                    <div className="my-3 h-px" style={{ backgroundColor: "rgba(201, 168, 124, 0.25)" }} />
+
+                    <a
+                      href="mailto:contato@institutosaggiomo.com.br"
+                      className="block group"
+                    >
+                      <span
+                        className="block text-[0.65rem] font-semibold uppercase tracking-[0.12em] mb-0.5"
+                        style={{ color: "#C9A87C" }}
+                      >
+                        E-mail
+                      </span>
+                      <span className="text-sm font-medium break-all group-hover:underline" style={{ color: "#3C3C3C" }}>
+                        contato@institutosaggiomo.com.br
+                      </span>
+                    </a>
                   </div>
                 </div>
 
